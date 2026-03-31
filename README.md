@@ -201,3 +201,16 @@ podman volume ls
 
 # Ресурсы и помощь
 - **Официальная документация Podman** — установка, руководство по началу работы, man‑страницы и troubleshooting.   [Podman](https://podman.io/docs/documentation)  [Podman](https://podman.io/docs)
+
+---
+
+## Директория .devcontainer/
+
+**Назначение**  
+.devcontainer содержит конфигурацию для Visual Studio Code Remote Containers / Dev Containers. Она описывает, как собрать и запустить контейнер разработки, какие расширения и настройки установить, какие команды выполнить после создания контейнера и какой пользователь будет использоваться внутри контейнера. Помещается в корень проекта рядом с исходниками.
+
+**Расположение**
+
+    Путь: поместите .devcontainer в корень репозитория с проектом: ( ./.devcontainer/).
+
+    Файлы: обычно минимум (devcontainer.json) и (Dockerfile) или (docker-compose.yml). Можно добавить (README.md), скрипты и (.dockerignore).
