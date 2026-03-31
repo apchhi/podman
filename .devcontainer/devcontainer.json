@@ -1,0 +1,20 @@
+{
+  "name": "fedora-dev",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "..",
+    "image": "localhost/fedora-dev:latest"
+  },
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "runArgs": ["--name", "dev-container"],
+  "remoteUser": "devuser",
+  "postCreateCommand": "dnf update -y && dnf install -y sudo git openssh-server bash-completion curl wget gcc make python3 nodejs && dnf clean all",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "ms-python.python",
+    "ms-vscode.cpptools"
+  ]
+}
